@@ -9,7 +9,7 @@ module.exports = {
 		path: path.resolve( 'dist' ),
 		chunkFilename: '[name].bundle.js',
 		library: "mui",
-		libraryTarget: "UMD"
+		libraryTarget: "umd"
 	},
 	module: {
 		rules: [ {
