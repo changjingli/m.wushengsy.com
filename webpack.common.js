@@ -8,12 +8,14 @@ module.exports = {
 		filename: 'bundle.js',
 		path: path.resolve( 'dist' ),
 		chunkFilename: '[name].bundle.js',
+		library: "mui",
+		libraryTarget: "UMD"
 	},
 	module: {
 		rules: [ {
-			test: /\.vue$/,
-			use: 'vue-loader'
-		},
+				test: /\.vue$/,
+				use: 'vue-loader'
+			},
 			{
 				test: /\.css$/,
 				use: [ 'style-loader', 'css-loader' ]
