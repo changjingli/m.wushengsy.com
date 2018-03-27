@@ -39,6 +39,17 @@
 				        	</li>
 				        </ul>
 				    </li>
+					<li class="mui-table-view-cell mui-collapse">
+				        <a class="mui-navigate-right" href="javascript:;">新闻中心</a>
+				        <ul class="mui-table-view mui-card">
+				        	<li class="mui-table-view-cell">
+				        		<a href="javascript:;">雾胜动态</a>
+				        	</li>
+				        	<li class="mui-table-view-cell">
+				        		<a href="javascript:;">行业新闻</a>
+				        	</li>
+				        </ul>
+				    </li>
 				    <li class="mui-table-view-cell mui-collapse"> 
 				        <a href="javascript:;">视频中心</a>
 				    </li>
@@ -58,5 +69,7 @@
 </script>
 
 <style scoped>
-
+	.mui-card {
+		margin-top: 10px;
+	}
 </style>
