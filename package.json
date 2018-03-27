@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+	"start": "webpack-dev-server --mode development --open --config webpack.dev.js",
+	"build": "webpack --mode production --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,6 @@
   "dependencies": {
     "animate.css": "^3.6.1",
     "expose-loader": "^0.7.4",
-    "jquery": "^3.3.1",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
     "wowjs": "^1.1.3"
