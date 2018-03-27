@@ -8,7 +8,7 @@ module.exports = {
 		filename: 'bundle.js',
 		path: path.resolve( 'dist' ),
 		chunkFilename: '[name].bundle.js',
-		library: "mui",
+		library: "[mui, WOW]",
 		libraryTarget: "umd"
 	},
 	module: {
@@ -37,6 +37,8 @@ module.exports = {
 		} )
 	],
 	externals: {
-		mui: "mui"
+		mui: "mui",
+		jquery: 'jQuery',
+		WOW: 'WOW',
 	}
 };
