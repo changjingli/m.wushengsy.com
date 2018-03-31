@@ -42,6 +42,7 @@
 					</div>
 					<!-- 轮播结束 -->
 
+					<!-- 实用案例开始 -->
 					<div class="mui-card">
 						<div class="mui-card-header">实用案例</div>
 						<div class="mui-card-content">
@@ -54,11 +55,13 @@
 							</ul>
 						</div>
 					</div>
+					<!-- 实用案例结束 -->
 
+					<!-- 合作伙伴开始 -->
 					<div class="mui-card">
 						<div class="mui-card-header">合作伙伴</div>
 						<div class="mui-card-content">
-							<div class="mui-slider">
+							<div class="mui-slider" id="partner">
 								<div class="mui-slider-group">
 									<template v-for="(par) in partner">
 										<div class="mui-slider-item">
@@ -80,6 +83,49 @@
 							</div>
 						</div>
 					</div>
+					<!-- 合作伙伴结束 -->
+
+					<!-- 雾胜动态开始 -->
+					<div class="mui-card">
+						<div class="mui-card-header">
+							雾胜动态
+							<a href="javascript:;" class="mui-pull-right mui-icon-more">更多<span class="mui-icon mui-icon-arrowright"></span></a>
+						</div>
+						<div class="mui-card-content">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media" v-for="n in CompanyNews">
+									<a href="javascript:;">
+										<div class="mui-media-body">
+											{{ n.title }}
+											<time :datetime="n.time" class="new-date mui-ellipsis">{{ n.time }}</time>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 雾胜动态结束 -->
+
+					<!-- 行业新闻开始 -->
+					<div class="mui-card">
+						<div class="mui-card-header">
+							行业新闻
+							<a href="javascript:;" class="mui-pull-right">更多<span class="mui-icon mui-icon-arrowright"></span></a>
+						</div>
+						<div class="mui-card-content">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media" v-for="i in IndustryNews">
+									<a href="javascript:;">
+										<div class="mui-media-body">
+											{{ i.title }}
+											<time :datetime="i.time" class="new-date mui-ellipsis">{{ i.time }}</time>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 行业新闻结束 -->
 
 				</div>
 			</div>
@@ -103,9 +149,13 @@
 				title: wsConfig.title,
 				imgPrefix: wsConfig.imgPrefix,
 				limit: wsConfig.limit,
+				newsLimit: wsConfig.newsLimit,
 
 				penwujiangwen: [],
 				partner: [],
+				wsDynamics: [],
+				CompanyNews: [],
+				IndustryNews: [],
 			}
 		},
 		components: {
@@ -134,19 +184,24 @@
 				} );
 
 				this.partner = arr;
-
+			} );
+			// 1 获取雾胜动态列表
+			util.request( 'apis/news/getCompanyNewsList.php', ( data ) => {
+				this.CompanyNews = data.slice( 0, this.newsLimit );
+			} );
+			// 2 获取行业新闻列表
+			util.request( 'apis/news/getIndustryNewsList.php', ( data ) => {
+				this.IndustryNews = data.slice( 0, this.newsLimit );
 			} );
 		},
 		mounted: function () {
 			mui( '.mui-scroll-wrapper' ).scroll( {
 				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 			} );
-
-			console.log( 'mui(\'mui-slider\')', mui( '.mui-slider' ) );
-
-			mui( '.mui-slider' ).each( ( idx, ele ) => {
-				mui( ele ).slider();
-			} );
+		},
+		updated: function () {
+			// 初始化[合作伙伴]轮播
+			mui( '#partner' ).slider();
 		},
 		filters: {
 			addPrefix: function ( src ) {
@@ -160,5 +215,10 @@
 	.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object {
 		height: 82px;
 		object-fit: cover;
+	}
+
+	.new-date {
+		display: block;
+		color: #8f8f94;
 	}
 </style>

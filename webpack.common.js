@@ -37,8 +37,6 @@ module.exports = {
 		} )
 	],
 	externals: {
-		mui: "mui",
 		jquery: 'jQuery',
-		WOW: 'WOW',
 	}
 };
