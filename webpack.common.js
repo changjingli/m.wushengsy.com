@@ -3,12 +3,14 @@ const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		app: './src/index.js',
+	},
 	output: {
-		filename: 'bundle.js',
+		filename: '[name].bundle.js',
 		path: path.resolve( 'dist' ),
 		chunkFilename: '[name].bundle.js',
-		library: "[mui, WOW]",
+		library: "[mui]",
 		libraryTarget: "umd"
 	},
 	module: {

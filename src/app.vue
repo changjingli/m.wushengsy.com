@@ -86,45 +86,11 @@
 					<!-- 合作伙伴结束 -->
 
 					<!-- 雾胜动态开始 -->
-					<div class="mui-card">
-						<div class="mui-card-header">
-							雾胜动态
-							<a href="javascript:;" class="mui-pull-right mui-icon-more">更多<span class="mui-icon mui-icon-arrowright"></span></a>
-						</div>
-						<div class="mui-card-content">
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell mui-media" v-for="n in CompanyNews">
-									<a href="javascript:;">
-										<div class="mui-media-body">
-											{{ n.title }}
-											<time :datetime="n.time" class="new-date mui-ellipsis">{{ n.time }}</time>
-										</div>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
+					<ws-news-component :header-text="CompanyNewsTitle" :industry-news="CompanyNews" />
 					<!-- 雾胜动态结束 -->
 
 					<!-- 行业新闻开始 -->
-					<div class="mui-card">
-						<div class="mui-card-header">
-							行业新闻
-							<a href="javascript:;" class="mui-pull-right">更多<span class="mui-icon mui-icon-arrowright"></span></a>
-						</div>
-						<div class="mui-card-content">
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell mui-media" v-for="i in IndustryNews">
-									<a href="javascript:;">
-										<div class="mui-media-body">
-											{{ i.title }}
-											<time :datetime="i.time" class="new-date mui-ellipsis">{{ i.time }}</time>
-										</div>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
+					<ws-news-component :header-text="IndustryNewsTitle" :industry-news="IndustryNews"/>
 					<!-- 行业新闻结束 -->
 
 				</div>
@@ -136,6 +102,7 @@
 
 <script>
 	import navLeft from './components/nav-left.vue';
+	import NewsComponent from "./components/NewsComponent.vue";
 
 	import mui from './libs/mui/3.7.2/js/mui.min';
 
@@ -153,12 +120,15 @@
 
 				penwujiangwen: [],
 				partner: [],
-				wsDynamics: [],
+
+				CompanyNewsTitle: '雾胜动态',
+				IndustryNewsTitle: '行业新闻',
 				CompanyNews: [],
 				IndustryNews: [],
 			}
 		},
 		components: {
+			'ws-news-component': NewsComponent,
 			'nav-left': navLeft,
 		},
 		created: function () {
@@ -204,6 +174,7 @@
 			mui( '#partner' ).slider();
 		},
 		filters: {
+			// 添加资源URL前缀
 			addPrefix: function ( src ) {
 				return wsConfig.imgPrefix + src;
 			}
@@ -217,8 +188,4 @@
 		object-fit: cover;
 	}
 
-	.new-date {
-		display: block;
-		color: #8f8f94;
-	}
 </style>
