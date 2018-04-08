@@ -6,7 +6,7 @@
 				<!-- 菜单具体展示内容 -->
 				<ul class="mui-table-view mui-card">
 				    <li class="mui-table-view-cell mui-collapse"> 
-				        <a href="javascript:;">首页</a>
+				        <router-link to="/index">首页</router-link>
 				    </li>
 				    <li class="mui-table-view-cell mui-collapse"> 
 				        <a class="mui-navigate-right" href="javascript:;">案例展示</a>
