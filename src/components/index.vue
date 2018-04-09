@@ -9,8 +9,7 @@
                 </div>
                 <div class="mui-slider-item"><a href="#"><img src="./../static/penwujiangwen.png" alt="喷雾降温" /></a>
                 </div>
-                <div class="mui-slider-item"><a href="#"><img src="./../static/penwujiashi.png"
-                                                              alt="喷雾加湿" /></a>
+	            <div class="mui-slider-item"><a href="#"><img src="./../static/penwujiashi.png" alt="喷雾加湿" /></a>
                 </div>
                 <div class="mui-slider-item"><a href="#"><img src="./../static/jingguanzaowu.png" alt="景观造雾" /></a>
                 </div>

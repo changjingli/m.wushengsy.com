@@ -17,11 +17,10 @@
 			<div class="mui-content mui-scroll-wrapper">
 
 				<!-- 主界面具体展示内容 -->
-
+				<ws-index></ws-index>
 
 				<!-- 路由出口 -->
 				<!-- 路由匹配到的组件将渲染在这里 -->
-				<router-view></router-view>
 			</div>
 			<div class="mui-off-canvas-backdrop"></div>
 		</div>
@@ -46,6 +45,8 @@
 		},
 		components: {
 			'nav-left': navLeft,
+			'ws-index': index,
+			'ws-NewsDetailComponent': NewsDetailComponent,
 		},
 		created: function () {
 
