@@ -1,30 +1,51 @@
 <template>
     <div class="mui-card">
         <div class="mui-card-header">
-            行业新闻
-            <a href="javascript:;" class="mui-pull-right">更多<span class="mui-icon mui-icon-arrowright"></span></a>
+          {{ newsTitle }}
         </div>
         <div class="mui-card-content">
-            <ul class="mui-table-view">
-                <li class="mui-table-view-cell mui-media" v-for="i in IndustryNews">
-                    <a href="javascript:;">
-                        <div class="mui-media-body">
-                            {{ i.title }}
-                            <time :datetime="i.time" class="new-date mui-ellipsis">{{ i.time }}</time>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+          <div class="mui-card-content-inner mui-text-justify" v-html="newsContent"></div>
         </div>
     </div>
 </template>
 <script>
+  import util from '@/util';
+
 	export default {
 		name: 'NewsDetailComponent',
 		props: {
 			headerText: '',
 			IndustryNews: {},
-		}
+    },
+    data () {
+      return {
+        newsTitle: '',
+        newsContent: '',
+      }
+    },
+    created () {
+      this.fetchData();
+    },
+    watch: {
+      '$route': 'fetchData'
+    },
+    methods: {
+      fetchData () {
+        let id = this.$route.params.id;
+
+        util.get( 'apis/news/getNewsDetail.php', {
+          id,
+        }, ( data ) => {
+          this.newsTitle = data.title;
+          this.newsContent = data.content;
+        } );
+      }
+    },
+    updated () {
+      mui( '.mui-scroll-wrapper' ).scroll( {
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+      } );
+    }
 	}
 </script>
 <style scoped>

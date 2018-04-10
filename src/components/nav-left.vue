@@ -5,10 +5,10 @@
 			<div class="mui-scroll">
 				<!-- 菜单具体展示内容 -->
 				<ul class="mui-table-view mui-card">
-				    <li class="mui-table-view-cell mui-collapse"> 
-				        <router-link to="/index">首页</router-link>
+          <li class="mui-table-view-cell mui-collapse">
+            <a href="/index">首页</a>
 				    </li>
-				    <li class="mui-table-view-cell mui-collapse"> 
+          <li class="mui-table-view-cell mui-collapse">
 				        <a class="mui-navigate-right" href="javascript:;">案例展示</a>
 				        <ul class="mui-table-view mui-card">
 				        	<li class="mui-table-view-cell">
@@ -28,7 +28,7 @@
 				        	</li>
 				        </ul>
 				    </li>
-				    <li class="mui-table-view-cell mui-collapse"> 
+          <li class="mui-table-view-cell mui-collapse">
 				        <a class="mui-navigate-right" href="javascript:;">产品展示</a>
 				        <ul class="mui-table-view mui-card">
 				        	<li class="mui-table-view-cell">
@@ -50,10 +50,10 @@
 				        	</li>
 				        </ul>
 				    </li>
-				    <li class="mui-table-view-cell mui-collapse"> 
+          <li class="mui-table-view-cell mui-collapse">
 				        <a href="javascript:;">视频中心</a>
 				    </li>
-				    <li class="mui-table-view-cell mui-collapse"> 
+          <li class="mui-table-view-cell mui-collapse">
 				        <a href="javascript:;">联系我们</a>
 				    </li>
 				</ul>

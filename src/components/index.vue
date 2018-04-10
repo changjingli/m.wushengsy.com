@@ -3,15 +3,15 @@
         <!-- 轮播开始 -->
         <div class="mui-slider">
             <div class="mui-slider-group">
-                <div class="mui-slider-item"><a href="#"><img src="./../static/penwuchuchen.png" alt="喷雾除尘" /></a>
+              <div class="mui-slider-item"><a href="#"><img src="./../assets/penwuchuchen.png" alt="喷雾除尘" /></a>
                 </div>
-                <div class="mui-slider-item"><a href="#"><img src="./../static/penwuchuchou.png" alt="喷雾除臭" /></a>
+              <div class="mui-slider-item"><a href="#"><img src="./../assets/penwuchuchou.png" alt="喷雾除臭" /></a>
                 </div>
-                <div class="mui-slider-item"><a href="#"><img src="./../static/penwujiangwen.png" alt="喷雾降温" /></a>
+              <div class="mui-slider-item"><a href="#"><img src="./../assets/penwujiangwen.png" alt="喷雾降温" /></a>
                 </div>
-	            <div class="mui-slider-item"><a href="#"><img src="./../static/penwujiashi.png" alt="喷雾加湿" /></a>
+              <div class="mui-slider-item"><a href="#"><img src="./../assets/penwujiashi.png" alt="喷雾加湿" /></a>
                 </div>
-                <div class="mui-slider-item"><a href="#"><img src="./../static/jingguanzaowu.png" alt="景观造雾" /></a>
+              <div class="mui-slider-item"><a href="#"><img src="./../assets/jingguanzaowu.png" alt="景观造雾" /></a>
                 </div>
             </div>
             <div class="mui-slider-indicator">
@@ -80,10 +80,8 @@
 
 	import NewsComponent from "./NewsComponent.vue";
 
-	import wsConfig from './../config.js';
-	import util from './../util';
-
-	import mui from './../libs/mui/3.7.2/js/mui.min';
+  import wsConfig from '@/config.js';
+  import util from '@/util.js';
 
 	export default {
 		name: "index",

@@ -1,22 +1,32 @@
-const type = "mobile", version = "1.0.0", userAgent = navigator.userAgent;
+const device = "mobile", version = "1.0.0", userAgent = navigator.userAgent;
 
 import $ from 'jquery';
 import wsConfig from './config.js';
 
-const get = ( url, cb ) => {
-	let postData = {
-		type,
-		version,
-		userAgent,
-		dateTime: Date.now()
-	};
+const get = ( url, data, cb ) => {
+  let postData = {
+    device,
+    version,
+    userAgent,
+    dateTime: Date.now()
+  };
 
-	$.get( wsConfig.ajaxPrefix + url, postData, ( data ) => {
-		cb( data );
-	} );
+  if ( isFunction( data ) ) {
+    cb = data;
+  } else {
+    postData = Object.assign( data, postData );
+  }
+
+  $.get( wsConfig.ajaxPrefix + url, postData, ( res ) => {
+    cb( res );
+  } );
 };
 
+const isFunction = ( obj ) => {
+  return typeof obj === 'function' && typeof obj.nodeType !== 'number';
+};
 
 export default {
-	get
+  get,
+  isFunction,
 };
