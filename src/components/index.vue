@@ -67,11 +67,11 @@
         <!-- 合作伙伴结束 -->
 
         <!-- 雾胜动态开始 -->
-        <ws-news-component :header-text="CompanyNewsTitle" :industry-news="CompanyNews" />
+      <ws-news-component :header-text="CompanyNewsTitle" :type="'CompanyNews'" :industry-news="CompanyNews" />
         <!-- 雾胜动态结束 -->
 
         <!-- 行业新闻开始 -->
-        <ws-news-component :header-text="IndustryNewsTitle" :industry-news="IndustryNews"/>
+      <ws-news-component :header-text="IndustryNewsTitle" :type="'IndustryNews'" :industry-news="IndustryNews" />
         <!-- 行业新闻结束 -->
     </div>
 </template>

@@ -1,22 +1,20 @@
 <template>
+  <div class="mui-scroll">
     <div class="mui-card">
-        <div class="mui-card-header">
-          {{ newsTitle }}
-        </div>
-        <div class="mui-card-content">
-          <div class="mui-card-content-inner mui-text-justify" v-html="newsContent"></div>
-        </div>
+      <div class="mui-card-header">
+        {{ newsTitle }}
+      </div>
+      <div class="mui-card-content">
+        <div class="mui-card-content-inner mui-text-justify" v-html="newsContent"></div>
+      </div>
     </div>
+  </div>
 </template>
 <script>
   import util from '@/util';
 
 	export default {
 		name: 'NewsDetailComponent',
-		props: {
-			headerText: '',
-			IndustryNews: {},
-    },
     data () {
       return {
         newsTitle: '',

@@ -1,75 +1,80 @@
 <template>
-	<!-- 菜单容器 -->
-	<aside class="mui-off-canvas-left mui-transitioning" id="offCanvasSide">
-		<div class="mui-scroll-wrapper">
-			<div class="mui-scroll">
-				<!-- 菜单具体展示内容 -->
-				<ul class="mui-table-view mui-card">
+  <!-- 菜单容器 -->
+  <aside class="mui-off-canvas-left mui-transitioning" id="offCanvasSide">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!-- 菜单具体展示内容 -->
+        <ul class="mui-table-view mui-card">
           <li class="mui-table-view-cell mui-collapse">
-            <a href="/index">首页</a>
-				    </li>
+            <router-link to="/" @tap.native="toUrl('/')">首页</router-link>
+          </li>
           <li class="mui-table-view-cell mui-collapse">
-				        <a class="mui-navigate-right" href="javascript:;">案例展示</a>
-				        <ul class="mui-table-view mui-card">
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">喷雾降温</a>
-				        	</li>
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">喷雾除尘</a>
-				        	</li>
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">景观造雾</a>
-				        	</li>
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">喷雾加湿</a>
-				        	</li>
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">喷雾除臭</a>
-				        	</li>
-				        </ul>
-				    </li>
+            <a class="mui-navigate-right" href="javascript:;">案例展示</a>
+            <ul class="mui-table-view mui-card">
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">喷雾降温</a>
+              </li>
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">喷雾除尘</a>
+              </li>
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">景观造雾</a>
+              </li>
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">喷雾加湿</a>
+              </li>
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">喷雾除臭</a>
+              </li>
+            </ul>
+          </li>
           <li class="mui-table-view-cell mui-collapse">
-				        <a class="mui-navigate-right" href="javascript:;">产品展示</a>
-				        <ul class="mui-table-view mui-card">
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">雾胜主机</a>
-				        	</li>
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">喷头和管件</a>
-				        	</li>
-				        </ul>
-				    </li>
-					<li class="mui-table-view-cell mui-collapse">
-				        <a class="mui-navigate-right" href="javascript:;">新闻中心</a>
-				        <ul class="mui-table-view mui-card">
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">雾胜动态</a>
-				        	</li>
-				        	<li class="mui-table-view-cell">
-				        		<a href="javascript:;">行业新闻</a>
-				        	</li>
-				        </ul>
-				    </li>
+            <a class="mui-navigate-right" href="javascript:;">产品展示</a>
+            <ul class="mui-table-view mui-card">
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">雾胜主机</a>
+              </li>
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">喷头和管件</a>
+              </li>
+            </ul>
+          </li>
           <li class="mui-table-view-cell mui-collapse">
-				        <a href="javascript:;">视频中心</a>
-				    </li>
+            <a class="mui-navigate-right" href="javascript:;">新闻中心</a>
+            <ul class="mui-table-view mui-card">
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">雾胜动态</a>
+              </li>
+              <li class="mui-table-view-cell">
+                <a href="javascript:;">行业新闻</a>
+              </li>
+            </ul>
+          </li>
           <li class="mui-table-view-cell mui-collapse">
-				        <a href="javascript:;">联系我们</a>
-				    </li>
-				</ul>
-			</div>
-		</div>
-	</aside>
+            <a href="javascript:;">视频中心</a>
+          </li>
+          <li class="mui-table-view-cell mui-collapse">
+            <a href="javascript:;">联系我们</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 </template>
 
 <script>
-	export default {
-		name: "nav-left"
-	}
+  export default {
+    name: "nav-left",
+    methods: {
+      toUrl ( url ) {
+        window.location.href = url;
+      }
+    }
+  }
 </script>
 
 <style scoped>
-	.mui-card {
-		margin-top: 10px;
-	}
+  .mui-card {
+    margin-top: 10px;
+  }
 </style>

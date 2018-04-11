@@ -2,12 +2,12 @@
   <div class="mui-card">
     <div class="mui-card-header">
       {{ headerText }}
-      <a href="javascript:;" class="mui-pull-right">更多<span class="mui-icon mui-icon-arrowright"></span></a>
+      <router-link :to="'/newList/' + type" class="mui-pull-right" @tap.native="toList()">更多<span class="mui-icon mui-icon-arrowright"></span></router-link>
     </div>
     <div class="mui-card-content">
       <ul class="mui-table-view">
         <li class="mui-table-view-cell mui-media" v-for="i in IndustryNews">
-          <router-link :to="'/newsDetail/' + i.id" @tap.native="toDetail(i.id)">
+          <router-link :to="'/newsDetail/' + i.id" @tap.native="toDetail(i.id)" class="mui-navigate-right">
             <div class="mui-media-body">
               {{ i.title }}
               <time :datetime="i.time" class="new-date mui-ellipsis">{{ i.time }}</time>
@@ -24,10 +24,16 @@
     props: {
       headerText: '',
       IndustryNews: {},
+      type: ''
     },
     methods: {
+      // 跳转新闻详情页
       toDetail: function ( id ) {
         window.location.href = '/newsDetail/' + id;
+      },
+      // 跳转分类新闻列表页
+      toList: function () {
+        window.location.href = '/newsList/' + this.type;
       }
     }
   }
