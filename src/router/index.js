@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import index from '@/components/index'
 import newsDetail from '@/components/NewsDetailComponent'
 import NewsListComponent from '@/components/NewsListComponent'

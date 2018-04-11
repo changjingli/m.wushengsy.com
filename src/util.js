@@ -1,6 +1,5 @@
 const device = "mobile", version = "1.0.0", userAgent = navigator.userAgent;
 
-import $ from 'jquery';
 import wsConfig from './config.js';
 
 const get = ( url, data, cb ) => {
