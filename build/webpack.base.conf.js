@@ -1,16 +1,17 @@
 'use strict'
-const path = require( 'path' )
-const utils = require( './utils' )
-const config = require( '../config' )
-const vueLoaderConfig = require( './vue-loader.conf' )
+const path = require('path')
+const utils = require('./utils')
+const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve ( dir ) {
-  return path.join( __dirname, '..', dir )
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
 }
 
 
+
 module.exports = {
-  context: path.resolve( __dirname, '../' ),
+  context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
   },
@@ -22,10 +23,10 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: [ '.js', '.vue', '.json' ],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve( 'src' ),
+      '@': resolve('src'),
     }
   },
   module: {
@@ -38,14 +39,22 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [ resolve( 'src' ), resolve( 'test' ), resolve( 'node_modules/webpack-dev-server/client' ) ]
+        include: [
+          resolve('src'),
+          resolve('test'),
+          resolve('node_modules/webpack-dev-server/client'),
+          resolve('node_modules/framework7'),
+          resolve('node_modules/framework7-vue'),
+          resolve('node_modules/template7'),
+          resolve('node_modules/dom7'),
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath( 'img/[name].[hash:7].[ext]' )
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
       {
@@ -53,7 +62,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath( 'media/[name].[hash:7].[ext]' )
+          name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
       },
       {
@@ -61,7 +70,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath( 'fonts/[name].[hash:7].[ext]' )
+          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
     ]

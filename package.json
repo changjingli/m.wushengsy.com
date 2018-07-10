@@ -1,17 +1,41 @@
 {
-  "name": "mwusheng",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Chang, Jingli <jingli_chang@foxmail.com>",
-  "private": true,
+  "name": "framework7-template-vue-webpack",
+  "version": "2.0.0",
+  "description": "Framework7 Vue Webpack starter app template",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/fonts",
+    "postinstall": "npm run copy-fonts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/framework7io/framework7-template-vue-webpack.git"
+  },
+  "keywords": [
+    "ios",
+    "webpack",
+    "framework7",
+    "vue",
+    "vuejs",
+    "material",
+    "mobile",
+    "app",
+    "f7"
+  ],
+  "author": "Vladimir Kharlampidi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/framework7io/framework7-template-vue-webpack/issues"
+  },
+  "homepage": "http://framework7.io/vue/",
   "dependencies": {
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "framework7": "^3.0.0",
+    "framework7-icons": "^0.9.1",
+    "framework7-vue": "^3.0.0",
+    "material-design-icons": "^3.0.1",
+    "vue": "^2.5.16"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -25,6 +49,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cpy-cli": "^1.0.1",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
@@ -44,7 +69,7 @@
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.2",
+    "vue-template-compiler": "^2.5.16",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
