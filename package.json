@@ -1,7 +1,7 @@
 {
-  "name": "framework7-template-vue-webpack",
-  "version": "2.0.0",
-  "description": "Framework7 Vue Webpack starter app template",
+  "name": "wusheng-mobile",
+  "version": "0.0.1",
+  "description": "wusheng mobile site",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/framework7io/framework7-template-vue-webpack.git"
+    "url": "git+https://github.com/changjingli/m.wushengsy.com.git"
   },
   "keywords": [
     "ios",
@@ -27,9 +27,9 @@
   "author": "Vladimir Kharlampidi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/framework7io/framework7-template-vue-webpack/issues"
+    "url": "https://github.com/changjingli/m.wushengsy.com/issues"
   },
-  "homepage": "http://framework7.io/vue/",
+  "homepage": "http://m.wushengsy.com/",
   "dependencies": {
     "framework7": "^3.0.0",
     "framework7-icons": "^0.9.1",
